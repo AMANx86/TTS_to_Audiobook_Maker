@@ -92,7 +92,6 @@ The script will generate `YourBook.txt` in the same directory, with each chapter
 
 
 
-Here's a README for your `audiobookmaker.py` script:
 
 ---
 
@@ -137,4 +136,3 @@ pip install edge-tts pydub
 
 ---
 
-Feel free to modify this README for your repository’s needs! If you want more customization (e.g., usage examples, troubleshooting), let me know.
