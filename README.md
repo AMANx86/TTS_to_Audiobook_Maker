@@ -88,3 +88,53 @@ The script will generate `YourBook.txt` in the same directory, with each chapter
 - Make sure the EPUB file exists in the script’s directory.
 
 ---
+
+
+
+
+Here's a README for your `audiobookmaker.py` script:
+
+---
+
+# Audiobook Maker
+
+This script, `audiobookmaker.py`, converts a directory of text chapters into an audiobook by generating MP3 files for each chapter using Microsoft's Edge TTS voices.
+
+## Features
+
+- **Text-to-Speech Conversion:** Converts `.txt` files in the `chapters` directory into MP3 audio using neural voices.
+- **Automatic Chunking:** Splits large chapters into manageable chunks for TTS processing.
+- **Parallel Processing:** Processes multiple chapters in parallel for faster audiobook generation.
+- **Validation:** Verifies the output MP3s to ensure successful audio generation.
+- **Error Handling & Retry:** Automatically retries failed conversions and ensures minimum duration for each audio chunk.
+- **Organized Output:** Saves all generated MP3s in the `LOTM Audiobook` directory, named sequentially by chapter.
+
+## Requirements
+
+- Python 3.x
+- [edge-tts](https://pypi.org/project/edge-tts/)
+- [pydub](https://pypi.org/project/pydub/)
+
+Install dependencies with:
+```bash
+pip install edge-tts pydub
+```
+
+## Usage
+
+1. Place your chapter `.txt` files in a directory named `chapters` (e.g., `chapters/chapter_001.txt`).
+2. Run the script:
+   ```bash
+   python audiobookmaker.py
+   ```
+3. The resulting MP3 files will be saved in the `LOTM Audiobook` directory.
+
+## Notes
+
+- The script uses the `en-US-EricNeural` voice by default. You can change the `VOICE` variable to any supported Edge TTS voice.
+- Each chunk of text is limited to 3900 characters to comply with TTS API limits.
+- Make sure your `.txt` files are sequentially numbered for correct chapter ordering.
+
+---
+
+Feel free to modify this README for your repository’s needs! If you want more customization (e.g., usage examples, troubleshooting), let me know.
