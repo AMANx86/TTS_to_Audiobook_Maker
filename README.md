@@ -2,10 +2,12 @@
 This repo is for my exp in generating audiobook using tts like edge tts
 
 #audiobookmaker.py
+
 -when used will turn everything in the (chapters)- folder into a audio files the generated audio file will look like 
 chapter_0001.mp3
 chapter_0002.mp3
 etc.
+
 the stuff inside the chapters folder will need to be in .txt format
 special note it uses parallel processing and it can be adjusted by changing the variable (MAX PARALLEL)
 
@@ -13,15 +15,19 @@ the files that will be made will be put into a file called "LOTM Audiobook"
 just rename it to whatever you want 
 
 #check_files.py
+
 -this will list out all the files in chapters folder it will also mean if this file works then the audiobookmaker.py will also work fine 
 
 #missingchapterfinder.py
+
 -this will find if there are any missing chapters in the( chapters ) folder if there are it will list it out it.( detects mp3)
 
 #missingchaptergenerator.py
+
 -this script will generate the missing chapters that is found by the (missingchaptersfinder.py) this generates mp3 files 
 
 #epubtotxt.py
+
 -as the name suggests it turns whatever epub is feed to it, will become txt
 
 all the files should be placed in the same folder as the epub
@@ -97,42 +103,55 @@ The script will generate `YourBook.txt` in the same directory, with each chapter
 
 # Audiobook Maker
 
-This script, `audiobookmaker.py`, converts a directory of text chapters into an audiobook by generating MP3 files for each chapter using Microsoft's Edge TTS voices.
-
-## Features
-
-- **Text-to-Speech Conversion:** Converts `.txt` files in the `chapters` directory into MP3 audio using neural voices.
-- **Automatic Chunking:** Splits large chapters into manageable chunks for TTS processing.
-- **Parallel Processing:** Processes multiple chapters in parallel for faster audiobook generation.
-- **Validation:** Verifies the output MP3s to ensure successful audio generation.
-- **Error Handling & Retry:** Automatically retries failed conversions and ensures minimum duration for each audio chunk.
-- **Organized Output:** Saves all generated MP3s in the `LOTM Audiobook` directory, named sequentially by chapter.
+Turn text (TXT) files into audiobooks using Python and Microsoft's Edge TTS.
 
 ## Requirements
 
-- Python 3.x
-- [edge-tts](https://pypi.org/project/edge-tts/)
-- [pydub](https://pypi.org/project/pydub/)
+- Python 3.8 or higher
+- edge-tts (Text-to-Speech for Microsoft Edge)
+- ffmpeg (for audio file processing)
 
-Install dependencies with:
-```bash
-pip install edge-tts pydub
-```
+## Installation
+
+1. Clone this repository:
+   ```sh
+   git clone https://github.com/yourusername/yourrepo.git
+   cd yourrepo
+   ```
+
+2. Install required Python packages:
+   ```sh
+   pip install edge-tts
+   ```
+
+3. Make sure `ffmpeg` is installed and accessible from your command line.
+   - You can download it from: https://ffmpeg.org/download.html
 
 ## Usage
 
-1. Place your chapter `.txt` files in a directory named `chapters` (e.g., `chapters/chapter_001.txt`).
-2. Run the script:
-   ```bash
-   python audiobookmaker.py
+### Step 1: Convert EPUB to TXT
+
+- Use any tool (such as Calibre or online converters) to convert your `.epub` ebook to a plain `.txt` file.
+
+### Step 2: Convert TXT to Audiobook
+
+- Run the audiobook maker script to convert your TXT file into an audiobook (MP3):
+
+   ```sh
+   python audiobookmaker.py input.txt output.mp3
    ```
-3. The resulting MP3 files will be saved in the `LOTM Audiobook` directory.
 
-## Notes
+   - Replace `input.txt` with the path to your text file.
+   - Replace `output.mp3` with your desired output filename.
 
-- The script uses the `en-US-EricNeural` voice by default. You can change the `VOICE` variable to any supported Edge TTS voice.
-- Each chunk of text is limited to 3900 characters to comply with TTS API limits.
-- Make sure your `.txt` files are sequentially numbered for correct chapter ordering.
+### Additional Notes
+
+- Ensure your TXT file is clean and well-formatted for best results.
+- You may need to adjust chunk sizes or script parameters for very large books.
+
+## License
+
+MIT License
 
 ---
 
