@@ -1,7 +1,7 @@
 # TTS-
 This repo is for my exp in generating audiobook using tts like edge tts
 
-##(audiobookmaker.py)
+##audiobookmaker
 
 -when used will turn everything in the (chapters)- folder into a audio files the generated audio file will look like 
 chapter_0001.mp3
