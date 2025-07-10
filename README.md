@@ -113,19 +113,14 @@ Turn text (TXT) files into audiobooks using Python and Microsoft's Edge TTS.
 
 ## Installation
 
-1. Clone this repository:
-   ```sh
-   git clone https://github.com/yourusername/yourrepo.git
-   cd yourrepo
-   ```
-
-2. Install required Python packages:
+1. Install required Python packages:
    ```sh
    pip install edge-tts
    ```
 
-3. Make sure `ffmpeg` is installed and accessible from your command line.
+2. Make sure `ffmpeg` is installed and accessible from your command line.
    - You can download it from: https://ffmpeg.org/download.html
+
 
 ## Usage
 
@@ -148,6 +143,19 @@ Turn text (TXT) files into audiobooks using Python and Microsoft's Edge TTS.
 
 - Ensure your TXT file is clean and well-formatted for best results.
 - You may need to adjust chunk sizes or script parameters for very large books.
+
+### Useful insight
+
+1. Create a folder called chapters_txt then put all the chapters inside the folder in txt format name them
+   -chapter_0001.txt
+   -chapter_0002.txt
+   -etc.
+   
+2. Make sure the files are cleaned and are in order the clean files are the files that have been rid of all censorship.
+
+3. Even though max parallel is at  by default change it to 80 lf your system can handle it.
+
+4. The Reason I recommend spliting the chapters is because of emergency cases if the whole book is one giant cluster of txt in event of loss of connection the entire file may be corrupted or destroyed or unfinished the Best way to counter it is to breat into chapters which is also how you activate the parallel processing function.
 
 ## License
 
