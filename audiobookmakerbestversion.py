@@ -4,8 +4,8 @@ import edge_tts
 import re
 import shutil
 
-CHAPTERS_DIR = "chapters"
-OUTPUT_DIR = "LOTM Audiobook"
+CHAPTERS_DIR = "chapters_txt"
+OUTPUT_DIR = "output_mp3"
 VOICE = "en-US-EricNeural"
 CHUNK_SIZE = 1000
 MAX_PARALLEL = 80
